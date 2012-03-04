@@ -23,6 +23,9 @@ require("./nava");
  */
 Nava.declare("[class name]",[super class],{
             method:function(){
+                /*Call this method from super class */
+                this.superCall(this,"method",arguments);
+                ......
             },
             ......
          })

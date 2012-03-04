@@ -8,9 +8,15 @@ HOWTO:
   
 3.Create a javascript file as your program start entrance.
   (The main.js is an example,you could run it directly.)
+  Note:You should load the nava module first like:
+  
+          require("./nava");
 
 
 USEAGE:
+
+/*load the nava lib (Only need once in your main js file.)*/
+require("./nava");
 
 /**
  *Declare a new javascript class

@@ -2,7 +2,7 @@ HOWTO:
 
 1.Copy "nava" folder to your nodejs project.
 
-2.Modified the "nava-config.json" in the "nava" folder,
+2.Modify the "nava-config.json" in the "nava" folder,
   set your javascript classpath(The path is relative to "nava" folder,or you could use an absolute path).
   The "nava/../package" is your default classpath folder,if the classpath is not be setted.
   

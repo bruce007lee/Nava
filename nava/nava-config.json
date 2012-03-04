@@ -1,0 +1,8 @@
+{
+	"enableLog":true,
+	"enableDebug":false,
+	"classPath":[
+	   "../../wolverine/package",
+	   "../../professorx/package"
+	]	
+}

@@ -2,7 +2,7 @@
 	"enableLog":true,
 	"enableDebug":false,
 	"classPath":[
-	   "../../wolverine/package",
-	   "../../professorx/package"
+	   "../package",
+	   "../../module_1/package"
 	]	
 }

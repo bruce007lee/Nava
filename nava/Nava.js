@@ -275,7 +275,7 @@ if(!global["Nava"]){
 	    var json = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
 	    Nava.extend(Nava.config,json);//overwrite config
 	  } catch (e) {
-		  e.message = "Failed to load bsconfig.....";
+		  e.message = "Failed to load nava-config.....";
 		  throw e;
 	  }
 	

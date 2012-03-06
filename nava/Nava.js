@@ -67,9 +67,9 @@ if(!global["Nava"]){
 			 * Log method
 			 * @param {Object} info
 			 */
-			  log:function(info){
+			  log:function(){
 				  if(Nava.config.enableLog){
-					console.log(info);
+				   console.log.apply(this,arguments);
 				  }
 			  },
 			  
@@ -77,9 +77,10 @@ if(!global["Nava"]){
 			 * Debug method
 			 * @param {Object} info
 			 */
-			  debug:function(info){
+			  debug:function(){
 				  if(Nava.config.enableDebug){
-					console.log("[DEBUG]",info);
+					  var args = ["[DEBUG]"].concat(Array.prototype.slice.call(arguments,0, arguments.length));					  
+					  console.log.apply(this,args);
 				  }
 			  },
 			 

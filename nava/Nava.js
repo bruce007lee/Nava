@@ -7,7 +7,7 @@ if(!global["Nava"]){
 	 * @class
 	 */
 	var Class = function(){
-		this.constructor.apply(this,arguments);
+		this._constructor_.apply(this,arguments);
 	};
 
 	Class.prototype={
@@ -15,7 +15,7 @@ if(!global["Nava"]){
 		 * Class constructor
 		 * 
 		 */	
-		constructor:function(){},
+		_constructor_:function(){},
 			
 	    /**
 	     * Class name
@@ -113,9 +113,9 @@ if(!global["Nava"]){
 			  extendClass:function(clazz,clazz1){
 				  if(typeof(clazz)==="function" &&
 						  typeof(clazz1)==="function" )  
-
+				  
 				  Nava.extend(clazz.prototype,clazz1.prototype);
-				  			  
+		  
 				  var p = clazz.prototype;
 				  
 				  if(p._superClass_==null){
@@ -235,7 +235,7 @@ if(!global["Nava"]){
 						  if(i==segs.length-1){
 							  if(!parent[segs[i]]){
 							    parent[segs[i]] = function(){
-							    	this.constructor.apply(this,arguments);
+							    	this._constructor_.apply(this,arguments);
 							    	}; 
 							   }else{
 								  throw new Error("Duplicate declare class error...");
@@ -257,8 +257,14 @@ if(!global["Nava"]){
 				  for(var x=1;x<args.length;x++){
 					  if(typeof(args[x])==="function"){
 						Nava.extendClass(parent,args[x]);
-					  }else if(typeof(args[x])==="object"){
-					    Nava.extend(parent.prototype,args[x]);
+					  }else if(typeof(args[x])==="object"){					    
+					    for(var p in args[x]){
+					    	if(p==="constructor"){
+					    		parent.prototype["_constructor_"] = args[x][p];
+					    	}else{
+					    		parent.prototype[p] = args[x][p];
+					    	}
+						  }
 					  }
 				  }	
 				  

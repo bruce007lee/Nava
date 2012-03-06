@@ -42,13 +42,9 @@ if(!global["Nava"]){
 			var l = sc.length;
 			for(var i=l-1;i>0;i--){
 			var p = this._superClass_[i];
-				while(p){
-					if(p.prototype[name]){
-						return p.prototype[name].apply(scope,args);
-					}else{
-						p = p._superClass_;
-					}
-				 }	
+				if(p.prototype[name]){
+					return p.prototype[name].apply(scope,args);
+				}
 			}
 	    }
 	};
